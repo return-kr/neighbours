@@ -7,11 +7,14 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.bts18.neighbours.R
 import com.bts18.neighbours.databinding.ActivityMainBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val auth = Firebase.auth
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         binding.apply {
             onItemClick = View.OnClickListener {
